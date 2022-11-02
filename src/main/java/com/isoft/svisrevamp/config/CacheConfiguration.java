@@ -48,6 +48,19 @@ public class CacheConfiguration {
             createCache(cm, com.isoft.svisrevamp.domain.User.class.getName());
             createCache(cm, com.isoft.svisrevamp.domain.Authority.class.getName());
             createCache(cm, com.isoft.svisrevamp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.isoft.svisrevamp.domain.Template.class.getName());
+            createCache(cm, com.isoft.svisrevamp.domain.Template.class.getName() + ".templateCategories");
+            createCache(cm, com.isoft.svisrevamp.domain.Template.class.getName() + ".templateFacilitators");
+            createCache(cm, com.isoft.svisrevamp.domain.Template.class.getName() + ".exams");
+            createCache(cm, com.isoft.svisrevamp.domain.Categories.class.getName());
+            createCache(cm, com.isoft.svisrevamp.domain.Categories.class.getName() + ".tempCategories");
+            createCache(cm, com.isoft.svisrevamp.domain.Categories.class.getName() + ".questions");
+            createCache(cm, com.isoft.svisrevamp.domain.TemplateCategories.class.getName());
+            createCache(cm, com.isoft.svisrevamp.domain.TemplateFacilitators.class.getName());
+            createCache(cm, com.isoft.svisrevamp.domain.Questions.class.getName());
+            createCache(cm, com.isoft.svisrevamp.domain.Exam.class.getName());
+            createCache(cm, com.isoft.svisrevamp.domain.Exam.class.getName() + ".examQuestions");
+            createCache(cm, com.isoft.svisrevamp.domain.ExamQuestions.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

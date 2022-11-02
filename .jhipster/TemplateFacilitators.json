@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20221102080846",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "template_facilitators",
+  "fields": [
+    {
+      "fieldName": "count",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "centerId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "facilitatorType",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "TemplateFacilitators",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "template",
+      "otherEntityRelationshipName": "templateFacilitators",
+      "relationshipName": "template",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
