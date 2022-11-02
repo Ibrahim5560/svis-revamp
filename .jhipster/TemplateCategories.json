@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20221102080845",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "template_categories",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noOfQuestions",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "seq",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "TemplateCategories",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "template",
+      "otherEntityRelationshipName": "templateCategories",
+      "relationshipName": "template",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "categories",
+      "otherEntityRelationshipName": "tempCategories",
+      "relationshipName": "categories",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,29 @@
+{
+  "svisRevampApp": {
+    "templateCategories": {
+      "home": {
+        "title": "Template Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Template Categories",
+        "createOrEditLabel": "Create or edit a Template Categories",
+        "notFound": "No Template Categories found"
+      },
+      "created": "A new Template Categories is created with identifier {{ param }}",
+      "updated": "A Template Categories is updated with identifier {{ param }}",
+      "deleted": "A Template Categories is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Template Categories {{ id }}?"
+      },
+      "detail": {
+        "title": "Template Categories"
+      },
+      "id": "ID",
+      "code": "Code",
+      "noOfQuestions": "No Of Questions",
+      "seq": "Seq",
+      "status": "Status",
+      "template": "Template",
+      "categories": "Categories"
+    }
+  }
+}
