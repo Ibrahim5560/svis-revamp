@@ -1,0 +1,93 @@
+
+entity Template {
+  	nameAr String required,
+	nameEn String required,
+	code String required,
+    timeInSec Long,
+    passScore Double,
+    status Integer
+}
+
+entity Categories {
+  	nameAr String required,
+	nameEn String required,
+	code String required,
+    status Integer
+}
+
+entity TemplateCategories {
+	code String,
+	noOfQuestions Integer required,
+	seq Integer required,
+    status Integer		
+}
+
+entity TemplateFacilitators{
+    count Integer required,
+	centerId Long required,
+    facilitatorType Integer required
+}
+
+entity Questions {
+  	descAr String required,
+	descEn String required,
+	code String required,
+	imgPath String,
+    timeInSec Long,
+    type Integer required,
+    weight Double required,
+    status Integer
+}
+
+
+entity Exam {
+    passScore Double,
+    score Double,
+    timeInSec Long,
+	validfrom Timestamp required,
+	validto Timestamp required,	
+	startAt Timestamp,
+	submitAt Timestamp,
+	userId Long,
+	examinerId Long,
+	examCode Long,
+	examDate Timestamp,
+	examResult Long,
+	exported Boolean,
+    status Integer required	
+}
+
+entity ExamQuestions {
+	descAr String required,
+	descEn String required,
+	code String required,
+	imgPath String,
+    timeInSec Long,
+    type Integer required,
+    weight Double required,
+    score Double,
+    timeInSec Long,	
+	startAt Timestamp,
+	submitAt Timestamp,
+	categoryId Integer,
+	questionId Integer,	
+    seq Integer,	
+    status Integer			
+}
+
+relationship OneToMany {
+ Template {templateCategories} to TemplateCategories
+ Template {templateFacilitators} to TemplateFacilitators
+ Template {exam} to Exam
+ Exam {examQuestions} to ExamQuestions
+ Categories {tempCategories} to TemplateCategories
+ Categories {questions} to Questions
+}
+
+
+paginate all with pagination
+dto * with mapstruct
+service all with serviceImpl
+filter all
+
+
