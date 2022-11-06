@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "template": "Template",
+        "categories": "Categories",
+        "templateCategories": "Template Categories",
+        "templateFacilitators": "Template Facilitators",
+        "questions": "Questions",
+        "exam": "Exam",
+        "examQuestions": "Exam Questions",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

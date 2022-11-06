@@ -1,0 +1,88 @@
+{
+  "applications": "*",
+  "changelogDate": "20221106004048",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "exam",
+  "fields": [
+    {
+      "fieldName": "passScore",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "score",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "timeInSec",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "validfrom",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "validto",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "startAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "submitAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "examinerId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "examCode",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "examDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "examResult",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "exported",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Exam",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "examQuestions",
+      "otherEntityRelationshipName": "exam",
+      "relationshipName": "examQuestions",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "template",
+      "otherEntityRelationshipName": "exam",
+      "relationshipName": "template",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,62 @@
+{
+  "applications": "*",
+  "changelogDate": "20221106004043",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "template",
+  "fields": [
+    {
+      "fieldName": "nameAr",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nameEn",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "timeInSec",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "passScore",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Template",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "templateCategories",
+      "otherEntityRelationshipName": "template",
+      "relationshipName": "templateCategories",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "templateFacilitators",
+      "otherEntityRelationshipName": "template",
+      "relationshipName": "templateFacilitators",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "exam",
+      "otherEntityRelationshipName": "template",
+      "relationshipName": "exam",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
