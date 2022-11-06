@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Exam.
+    -->
+    <changeSet id="20221106004048-1" author="jhipster">
+        <createTable tableName="exam">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pass_score" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="score" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="time_in_sec" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="validfrom" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="validto" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="start_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="submit_at" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="examiner_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="exam_code" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="exam_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="exam_result" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="exported" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="template_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="exam" columnName="validfrom" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="exam" columnName="validto" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="exam" columnName="start_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="exam" columnName="submit_at" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="exam" columnName="exam_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20221106004048-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/exam.csv"
+                  separator=";"
+                  tableName="exam"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="pass_score" type="numeric"/>
+            <column name="score" type="numeric"/>
+            <column name="time_in_sec" type="numeric"/>
+            <column name="validfrom" type="date"/>
+            <column name="validto" type="date"/>
+            <column name="start_at" type="date"/>
+            <column name="submit_at" type="date"/>
+            <column name="user_id" type="numeric"/>
+            <column name="examiner_id" type="numeric"/>
+            <column name="exam_code" type="numeric"/>
+            <column name="exam_date" type="date"/>
+            <column name="exam_result" type="numeric"/>
+            <column name="exported" type="boolean"/>
+            <column name="status" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
